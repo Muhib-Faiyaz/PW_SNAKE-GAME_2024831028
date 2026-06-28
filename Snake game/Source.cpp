@@ -19,6 +19,7 @@ int main()
     sf::Vector2i dir = { 1, 0 };
     sf::Vector2i food = { 10, 10 };
     bool alive = true;
+   
 
     int score = 0;  
 
@@ -45,22 +46,22 @@ int main()
         {
             bool dirChanged = false;  
 
-            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) && dir.y == 0)
+            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) && dir.y == 0)
             {
                 dir = { 0,-1 }; dirChanged = true;
             }
 
-            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) && dir.y == 0)
+            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) && dir.y == 0)
             {
                 dir = { 0, 1 }; dirChanged = true;
             }
 
-            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && dir.x == 0)
+            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) && dir.x == 0)
             {
                 dir = { -1, 0 }; dirChanged = true;
             }
 
-            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) && dir.x == 0)
+            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && dir.x == 0)
             {
                 dir = { 1, 0 }; dirChanged = true;
             }
@@ -88,22 +89,22 @@ int main()
                 {
                     food = { rand() % (W / CELL), rand() % (H / CELL) };
                     score++;
-                    if (speed < 30)
+                    if (speed < 100)
                     {
-                        speed++;
+                        speed+=10;
                         window.setFramerateLimit(speed);
-                    }
+                    } 
                 }
                 else
                     snake.pop_back();
             }
         }
-
+        
         scoreText.setString("Score: " + std::to_string(score));
 
         window.clear(sf::Color(30, 30, 30));
 
-        sf::RectangleShape cell(sf::Vector2f(CELL , CELL ));
+        sf::RectangleShape cell(sf::Vector2f(CELL -2 , CELL -2));
 
         for (int i = 0; i < (int)snake.size(); i++)
         {
