@@ -45,7 +45,10 @@ int main()
             
             if (newHead.x < 0 || newHead.x >= W / CELL ||
                 newHead.y < 0 || newHead.y >= H / CELL)
-                alive = false;
+            {
+                newHead.x = (newHead.x + W / CELL) % (W / CELL);
+                newHead.y = (newHead.y + H / CELL) % (H / CELL);
+            }
 
            
             for (int i = 0; i < (int)snake.size(); i++)
