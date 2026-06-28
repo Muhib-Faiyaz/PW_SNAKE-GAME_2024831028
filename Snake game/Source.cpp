@@ -12,7 +12,8 @@ int main()
     srand(time(nullptr));
 
     sf::RenderWindow window(sf::VideoMode({ W, H }), "Snake Game");
-    window.setFramerateLimit(10);
+    int speed = 10;
+    window.setFramerateLimit(speed);
 
     std::deque<sf::Vector2i> snake = { {5,5}, {4,5}, {3,5} };
     sf::Vector2i dir = { 1, 0 };
@@ -42,14 +43,27 @@ int main()
         
         if (alive)
         {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) && dir.y == 0) 
-                dir = { 0,-1 };
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) && dir.y == 0) 
-                dir = { 0, 1 };
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && dir.x == 0) 
-                dir = { -1, 0 };
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) && dir.x == 0) 
-                dir = { 1, 0 };
+            bool dirChanged = false;  
+
+            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) && dir.y == 0)
+            {
+                dir = { 0,-1 }; dirChanged = true;
+            }
+
+            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) && dir.y == 0)
+            {
+                dir = { 0, 1 }; dirChanged = true;
+            }
+
+            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && dir.x == 0)
+            {
+                dir = { -1, 0 }; dirChanged = true;
+            }
+
+            if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) && dir.x == 0)
+            {
+                dir = { 1, 0 }; dirChanged = true;
+            }
 
             sf::Vector2i newHead = snake.front() + dir;
 
@@ -59,6 +73,7 @@ int main()
             {
                 newHead.x = (newHead.x + W / CELL) % (W / CELL);
                 newHead.y = (newHead.y + H / CELL) % (H / CELL);
+               
             }
 
            
@@ -73,6 +88,11 @@ int main()
                 {
                     food = { rand() % (W / CELL), rand() % (H / CELL) };
                     score++;
+                    if (speed < 30)
+                    {
+                        speed++;
+                        window.setFramerateLimit(speed);
+                    }
                 }
                 else
                     snake.pop_back();
