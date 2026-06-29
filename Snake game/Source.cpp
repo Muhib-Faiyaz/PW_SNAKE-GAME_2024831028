@@ -16,13 +16,13 @@ int main()
     int bigFood = 0;
     window.setFramerateLimit(speed);
 
-    std::deque<sf::Vector2i> snake = { {5,5}, {4,5}, {3,5} };
+    std::deque<sf::Vector2i> snake = {  {7,5}, {6,5},{5,5}, {4,5}, { 3,5 } };
     sf::Vector2i dir = { 1, 0 };
     sf::Vector2i food = { 10, 10 };
     bool alive = true;
 
 
-    int score = 0;
+    int score = 100;
 
     sf::Font font;
     font.openFromFile("arial.ttf");
@@ -99,13 +99,13 @@ int main()
                     }
                     else
                     {
-                        score++;
+                        score-=10;
                         bigFood++;
                     }
 
-                    if (speed < 30)
+                    if (speed < 20)
                     {
-                        speed += 3;
+                        speed += 1;
                         window.setFramerateLimit(speed);
                     }
                 }
@@ -176,9 +176,9 @@ int main()
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R))
             {
-                snake = { {5,5}, {4,5}, {3,5} };
+                snake = { {7,5}, {6,5},{5,5}, {4,5}, { 3,5 } };
                 dir = { 1, 0 };
-                score = 0;
+                score = 100;
                 speed = 10;
                 bigFood = 0;
                 alive = true;
