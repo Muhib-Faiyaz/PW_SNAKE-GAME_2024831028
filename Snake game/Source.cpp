@@ -160,7 +160,7 @@ int main()
             scoreText.setOrigin(sf::Vector2f(bounds.position.x + bounds.size.x / 2.f, bounds.position.y + bounds.size.y / 2.f));
             scoreText.setPosition(sf::Vector2f(W / 2.0f, H / 2.0f + 50.f));
 
-            
+
             sf::Text restartText(font);
             restartText.setCharacterSize(20);
             restartText.setFillColor(sf::Color::White);
@@ -173,7 +173,7 @@ int main()
             window.draw(scoreText);
             window.draw(restartText);
 
-            
+
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R))
             {
                 snake = { {5,5}, {4,5}, {3,5} };
