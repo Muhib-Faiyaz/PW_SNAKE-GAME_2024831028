@@ -13,12 +13,12 @@ int main()
 
     sf::RenderWindow window(sf::VideoMode({ W, H }), "Snake Game");
     int speed = 10;
+    int bigFood = 0;
     window.setFramerateLimit(speed);
 
     std::deque<sf::Vector2i> snake = { {5,5}, {4,5}, {3,5} };
     sf::Vector2i dir = { 1, 0 };
     sf::Vector2i food = { 10, 10 };
-    int big_food = 0;
     bool alive = true;
 
 
@@ -49,22 +49,26 @@ int main()
 
             if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) && dir.y == 0)
             {
-                dir = { 0,-1 }; dirChanged = true;
+                dir = { 0,-1 };
+                dirChanged = true;
             }
 
             if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) && dir.y == 0)
             {
-                dir = { 0, 1 }; dirChanged = true;
+                dir = { 0, 1 };
+                dirChanged = true;
             }
 
             if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) && dir.x == 0)
             {
-                dir = { -1, 0 }; dirChanged = true;
+                dir = { -1, 0 };
+                dirChanged = true;
             }
 
             if (!dirChanged && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && dir.x == 0)
             {
-                dir = { 1, 0 }; dirChanged = true;
+                dir = { 1, 0 };
+                dirChanged = true;
             }
 
             sf::Vector2i newHead = snake.front() + dir;
@@ -89,14 +93,14 @@ int main()
                 if (newHead == food)
                 {
                     food = { rand() % (W / CELL), rand() % (H / CELL) };
-                    if (big_food >= 5) {
+                    if (bigFood >= 5) {
                         score += 5;
-                        big_food = 0;
+                        bigFood = 0;
                     }
                     else
                     {
                         score++;
-                        big_food++;
+                        bigFood++;
                     }
 
                     if (speed < 30)
@@ -123,7 +127,7 @@ int main()
             window.draw(cell);
         }
 
-        if (big_food < 5)
+        if (bigFood < 5)
         {
             cell.setFillColor(sf::Color::Red);
 
@@ -148,14 +152,12 @@ int main()
             gameOverText.setString("GAME OVER");
 
             sf::FloatRect goBounds = gameOverText.getLocalBounds();
-            gameOverText.setOrigin(sf::Vector2f(
-            goBounds.position.x + goBounds.size.x / 2.f,goBounds.position.y + goBounds.size.y / 2.f));
+            gameOverText.setOrigin(sf::Vector2f(goBounds.position.x + goBounds.size.x / 2.f, goBounds.position.y + goBounds.size.y / 2.f));
             gameOverText.setPosition(sf::Vector2f(W / 2.f, H / 2.f - 50.f));
 
             scoreText.setCharacterSize(40);
             sf::FloatRect bounds = scoreText.getLocalBounds();
-            scoreText.setOrigin(sf::Vector2f(
-            bounds.position.x + bounds.size.x / 2.f, bounds.position.y + bounds.size.y / 2.f));
+            scoreText.setOrigin(sf::Vector2f(bounds.position.x + bounds.size.x / 2.f, bounds.position.y + bounds.size.y / 2.f));
             scoreText.setPosition(sf::Vector2f(W / 2.0f, H / 2.0f + 50.f));
 
             
@@ -164,8 +166,7 @@ int main()
             restartText.setFillColor(sf::Color::White);
             restartText.setString("Press R to Restart");
             sf::FloatRect rBounds = restartText.getLocalBounds();
-            restartText.setOrigin(sf::Vector2f(
-            rBounds.position.x + rBounds.size.x / 2.f, rBounds.position.y + rBounds.size.y / 2.f));
+            restartText.setOrigin(sf::Vector2f(rBounds.position.x + rBounds.size.x / 2.f, rBounds.position.y + rBounds.size.y / 2.f));
             restartText.setPosition(sf::Vector2f(W / 2.f, H / 2.f + 100.f));
 
             window.draw(gameOverText);
@@ -179,7 +180,7 @@ int main()
                 dir = { 1, 0 };
                 score = 0;
                 speed = 10;
-                big_food = 0;
+                bigFood = 0;
                 alive = true;
                 window.setFramerateLimit(speed);
 
