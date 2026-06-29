@@ -1,24 +1,25 @@
 ﻿  Source.cpp
 C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(12,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(27,22): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(112,73): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(112,73): warning C4244:         with
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(112,73): warning C4244:         [
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(112,73): warning C4244:             T=float
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(112,73): warning C4244:         ]
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(112,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(112,54): warning C4244:         with
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(112,54): warning C4244:         [
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(112,54): warning C4244:             T=float
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(112,54): warning C4244:         ]
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(117,61): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(117,61): warning C4244:         with
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(117,61): warning C4244:         [
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(117,61): warning C4244:             T=float
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(117,61): warning C4244:         ]
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(117,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(117,46): warning C4244:         with
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(117,46): warning C4244:         [
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(117,46): warning C4244:             T=float
-C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(117,46): warning C4244:         ]
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(28,22): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(122,73): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(122,73): warning C4244:         with
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(122,73): warning C4244:         [
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(122,73): warning C4244:             T=float
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(122,73): warning C4244:         ]
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(122,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(122,54): warning C4244:         with
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(122,54): warning C4244:         [
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(122,54): warning C4244:             T=float
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(122,54): warning C4244:         ]
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(136,61): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(136,61): warning C4244:         with
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(136,61): warning C4244:         [
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(136,61): warning C4244:             T=float
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(136,61): warning C4244:         ]
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(136,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(136,46): warning C4244:         with
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(136,46): warning C4244:         [
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(136,46): warning C4244:             T=float
+C:\Users\DFIT\Desktop\snake game\snake game\Snake game\Source.cpp(136,46): warning C4244:         ]
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Snake game.vcxproj -> C:\Users\DFIT\Desktop\snake game\snake game\x64\Debug\Snake game.exe
