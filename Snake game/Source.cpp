@@ -101,7 +101,7 @@ int main()
 
                     if (speed < 30)
                     {
-                        speed += 0;
+                        speed += 3;
                         window.setFramerateLimit(speed);
                     }
                 }
