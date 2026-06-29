@@ -14,15 +14,15 @@ int main()
     sf::RenderWindow window(sf::VideoMode({ W, H }), "Snake Game");
     int speed = 10;
     int bigFood = 0;
+    int score = 0;
     window.setFramerateLimit(speed);
 
-    std::deque<sf::Vector2i> snake = {  {7,5}, {6,5},{5,5}, {4,5}, { 3,5 } };
+    std::deque<sf::Vector2i> snake = { {5,5}, {4,5}, {3,5} };
     sf::Vector2i dir = { 1, 0 };
     sf::Vector2i food = { 10, 10 };
     bool alive = true;
 
 
-    int score = 100;
 
     sf::Font font;
     font.openFromFile("arial.ttf");
@@ -77,8 +77,7 @@ int main()
             if (newHead.x < 0 || newHead.x >= W / CELL ||
                 newHead.y < 0 || newHead.y >= H / CELL)
             {
-                newHead.x = (newHead.x + W / CELL) % (W / CELL);
-                newHead.y = (newHead.y + H / CELL) % (H / CELL);
+                alive = false;
 
             }
 
@@ -99,7 +98,7 @@ int main()
                     }
                     else
                     {
-                        score-=10;
+                        score++;
                         bigFood++;
                     }
 
@@ -176,9 +175,9 @@ int main()
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R))
             {
-                snake = { {7,5}, {6,5},{5,5}, {4,5}, { 3,5 } };
+                snake = { {5,5}, {4,5}, {3,5} };
                 dir = { 1, 0 };
-                score = 100;
+                score = 0;
                 speed = 10;
                 bigFood = 0;
                 alive = true;
